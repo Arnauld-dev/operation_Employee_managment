@@ -127,7 +127,9 @@
                     //echo "Connection Stablished";
                     //read all data from database table for employee details
                     $sql = "SELECT * from employee";
-                    $result = $connection->query($sql);
+                    $result = $connection->prepare($sql);
+                    $result->execute();
+                    $result = $result->get_result();
                 }
 
 
